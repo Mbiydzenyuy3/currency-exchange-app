@@ -34,7 +34,7 @@ export const CurrencyExchange = () => {
     <div>
       <h2>Exchange Currency</h2>
       <div className="exchange-card">
-        <select
+        <select className="currencies"
           value={fromCurrency}
           onChange={(e) => setFromCurrency(e.target.value)}
         >
@@ -52,7 +52,7 @@ export const CurrencyExchange = () => {
           onChange={(e) => setAmount(e.target.value)}
           placeholder="Enter exchange amount "
         />
-        <select
+        <select className="default-currencies-field"
           value={toCurrency}
           onChange={(e) => setToCurrency(e.target.value)}
         >
