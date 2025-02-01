@@ -16,9 +16,11 @@ export const Transactions = () => {
   return (
     <div>
       <h2>Total Balance</h2>
-      <p>
-        {calculateTransactions().toFixed(2)} {wallet.defaultCurrency}
-      </p>
+      <div className="transaction-card">
+        <p>
+          {calculateTransactions().toFixed(2)} {wallet.defaultCurrency}
+        </p>
+      </div>
     </div>
   );
 };

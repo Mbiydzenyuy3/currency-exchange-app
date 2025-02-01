@@ -33,36 +33,39 @@ export const CurrencyExchange = () => {
   return (
     <div>
       <h2>Exchange Currency</h2>
-      <select
-        value={fromCurrency}
-        onChange={(e) => setFromCurrency(e.target.value)}
-      >
-        {Object.keys(wallet)
-          .filter((key) => key !== "defaultCurrency")
-          .map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
-      </select>
-      <input
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
-      <select
-        value={toCurrency}
-        onChange={(e) => setToCurrency(e.target.value)}
-      >
-        {Object.keys(wallet)
-          .filter((key) => key !== "defaultCurrency")
-          .map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
-      </select>
-      <button onClick={handleExchange}>Exchange</button>
+      <div className="exchange-card">
+        <select
+          value={fromCurrency}
+          onChange={(e) => setFromCurrency(e.target.value)}
+        >
+          {Object.keys(wallet)
+            .filter((key) => key !== "defaultCurrency")
+            .map((currency) => (
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
+            ))}
+        </select>
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter exchange amount "
+        />
+        <select
+          value={toCurrency}
+          onChange={(e) => setToCurrency(e.target.value)}
+        >
+          {Object.keys(wallet)
+            .filter((key) => key !== "defaultCurrency")
+            .map((currency) => (
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
+            ))}
+        </select>
+        <button onClick={handleExchange}>Exchange</button>
+      </div>
     </div>
   );
 };

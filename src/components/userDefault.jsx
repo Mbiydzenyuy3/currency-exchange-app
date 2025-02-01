@@ -1,6 +1,6 @@
 import { useWallet } from "../context/appContext";
 
-export const UserSettings = () => {
+export const UserDefaultCurrency = () => {
   const { wallet, updateWallet } = useWallet();
 
   const handleDefaultCurrencyChange = (e) => {
@@ -12,9 +12,9 @@ export const UserSettings = () => {
 
   return (
     <div>
-      <h2>User Settings</h2>
-      <label>
-        Default Currency:
+      <h2></h2>
+      <label className="user-label-card">
+        User Default Currency:
         <select
           value={wallet.defaultCurrency}
           onChange={handleDefaultCurrencyChange}

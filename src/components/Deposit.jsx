@@ -39,34 +39,36 @@ function Deposit() {
   );
 
   return (
-    <div>
+    <>
       <h2>Deposit Money</h2>
-      <div>
-        <label htmlFor="currency-select">Select Currency: </label>
-        <select
-          id="currency-select"
-          value={selectedCurrency}
-          onChange={(e) => setSelectedCurrency(e.target.value)}
-        >
-          {currencies.map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
-            </option>
-          ))}
-        </select>
+      <div className="deposit-card">
+        <div>
+          {/* <label htmlFor="currency-select">Select Currency: </label> */}
+          <select
+            id="currency-select"
+            value={selectedCurrency}
+            onChange={(e) => setSelectedCurrency(e.target.value)}
+          >
+            {currencies.map((currency) => (
+              <option key={currency} value={currency}>
+                {currency}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          {/* <label htmlFor="amount-input">Amount: </label> */}
+          <input
+            id="amount-input"
+            type="number"
+            value={depositAmount}
+            onChange={(e) => setDepositAmount(e.target.value)}
+            placeholder="Enter deposit amount"
+          />
+        </div>
+        <button onClick={handleDeposit}>Deposit</button>
       </div>
-      <div>
-        <label htmlFor="amount-input">Amount: </label>
-        <input
-          id="amount-input"
-          type="number"
-          value={depositAmount}
-          onChange={(e) => setDepositAmount(e.target.value)}
-          placeholder="Enter amount"
-        />
-      </div>
-      <button onClick={handleDeposit}>Deposit</button>
-    </div>
+    </>
   );
 }
 
