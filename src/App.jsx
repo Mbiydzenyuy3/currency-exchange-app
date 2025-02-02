@@ -10,7 +10,7 @@ export default function App() {
   return (
     <WalletProvider>
       <div className="app">
-        <h1>Currency Exchange App</h1>
+        <h1>Track Your Transactions</h1>
         <div className="container">
           <div className="balance">
             <Balance />
