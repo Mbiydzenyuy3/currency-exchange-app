@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useWallet } from "../context/appContext";
 import { useCurrencyConverter } from "../services/api-service";
 
-export const CurrencyExchange = () => {
+export function CurrencyExchange() {
   const { wallet, updateWallet } = useWallet();
   const { convert } = useCurrencyConverter();
   const [fromCurrency, setFromCurrency] = useState("USD");
@@ -34,7 +34,8 @@ export const CurrencyExchange = () => {
     <div>
       <h2>Exchange Currency</h2>
       <div className="exchange-card">
-        <select className="currencies"
+        <select
+          className="currencies"
           value={fromCurrency}
           onChange={(e) => setFromCurrency(e.target.value)}
         >
@@ -42,6 +43,7 @@ export const CurrencyExchange = () => {
             .filter((key) => key !== "defaultCurrency")
             .map((currency) => (
               <option key={currency} value={currency}>
+                <span>From </span>
                 {currency}
               </option>
             ))}
@@ -52,7 +54,8 @@ export const CurrencyExchange = () => {
           onChange={(e) => setAmount(e.target.value)}
           placeholder="Enter exchange amount "
         />
-        <select className="default-currencies-field"
+        <select
+          className="default-currencies-field"
           value={toCurrency}
           onChange={(e) => setToCurrency(e.target.value)}
         >
@@ -60,6 +63,7 @@ export const CurrencyExchange = () => {
             .filter((key) => key !== "defaultCurrency")
             .map((currency) => (
               <option key={currency} value={currency}>
+                <span>To </span>
                 {currency}
               </option>
             ))}
@@ -68,4 +72,4 @@ export const CurrencyExchange = () => {
       </div>
     </div>
   );
-};
+}

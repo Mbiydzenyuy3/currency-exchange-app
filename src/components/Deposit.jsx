@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useWallet } from "../context/appContext"; // Assuming this is the correct path
+import { useWallet } from "../context/appContext";
 
 function Deposit() {
   // Use the wallet context
@@ -43,7 +43,6 @@ function Deposit() {
       <h2>Deposit Money</h2>
       <div className="deposit-card">
         <div>
-          {/* <label htmlFor="currency-select">Select Currency: </label> */}
           <select
             id="currency-select"
             value={selectedCurrency}
@@ -57,7 +56,6 @@ function Deposit() {
           </select>
         </div>
         <div>
-          {/* <label htmlFor="amount-input">Amount: </label> */}
           <input
             id="amount-input"
             type="number"

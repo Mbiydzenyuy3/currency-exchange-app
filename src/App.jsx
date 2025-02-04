@@ -15,12 +15,13 @@ export default function App() {
           <div className="balance">
             <Balance />
           </div>
-          <div className="exchange">
-            <CurrencyExchange />
-          </div>
           <div className="deposit">
             <Deposit />
           </div>
+          <div className="exchange">
+            <CurrencyExchange />
+          </div>
+
           <div className="total-balance">
             <Transactions />
           </div>
